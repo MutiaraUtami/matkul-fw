@@ -29,13 +29,28 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+// Route dengan parameter untuk Courses
+Route::get('/courses/{name}', function ($name) {
+    return "Kamu sedang melihat course: " . ucfirst($name);
+})->name('courses.show');
+
+
 // Grouping Route untuk kategori courses
 Route::prefix('courses')->group(function () {
     Route::get('framework-web', function () {
         return "Ini adalah halaman Framework Web";
     })->name('framework-web');
 
+    Route::get('framework-web/{lesson}', function ($lesson) {
+        return "Framework Web - Pelajaran ke-{$lesson}";
+    })->name('framework-web.lesson');
+
     Route::get('mobile-programming', function () {
         return "Ini adalah halaman Mobile Programming";
     })->name('mobile-programming');
+
+    Route::get('mobile-programming/{lesson}', function ($lesson) {
+        return "Mobile Programming - Pelajaran ke-{$lesson}";
+    })->name('mobile-programming.lesson');
 });
+
