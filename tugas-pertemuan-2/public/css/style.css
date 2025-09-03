@@ -1,0 +1,62 @@
+/* Warna dasar: biru soft */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f6ff; /* biru sangat lembut */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #2a5d9f; /* biru lebih gelap */
+    margin: 40px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #4a90e2; /* biru soft */
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+p {
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    background-color: #4a90e2; /* biru soft */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background-color: #2a5d9f; /* biru lebih gelap */
+}
+
+.back {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #808080;
+}
+
+.back:hover {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #5a5a5a;
+}
+
+
