@@ -9,6 +9,6 @@
 <body>
     <h1>About</h1>
     <p>Website sederhana untuk belajar routing Laravel.</p>
-    <a href="{{ route('home') }}">Kembali ke Home</a>
+    <a class="back" href="{{ route('home') }}">Kembali ke Home</a>
 </body>
 </html>

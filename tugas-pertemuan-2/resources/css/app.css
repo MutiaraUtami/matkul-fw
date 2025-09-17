@@ -1,0 +1,129 @@
+/* login.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* login.css */
+/* login.css */
+
+/* --------- Global --------- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a; /* warna dark navy */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --------- Login Card --------- */
+.login-card {
+    background: #c1e8ff; /* merah MU */
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    color: white;
+    text-align: center;
+}
+
+/* Logo */
+.login-card img {
+    width: 64px;
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+/* Title */
+.login-card h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #fff;
+}
+
+.login-card p.subtitle {
+    font-size: 0.9rem;
+    color: #fca5a5;
+    margin-bottom: 1.5rem;
+}
+
+/* Input */
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    margin-top: 0.5rem;
+    border: 1px solid #fca5a5;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.login-card input[type="email"]:focus,
+.login-card input[type="password"]:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+}
+
+/* Checkbox */
+.login-card input[type="checkbox"] {
+    accent-color: #ef4444;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.login-card label {
+    font-size: 0.85rem;
+    color: #fca5a5;
+}
+
+/* Links */
+.login-card a {
+    color: #fca5a5;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.login-card a:hover {
+    color: #fff;
+}
+
+/* Button */
+.login-card button {
+    background: #ef4444;
+    color: white;
+    font-weight: 600;
+    padding: 0.65rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+}
+
+.login-card button:hover {
+    background: #dc2626;
+}
+
+.login-card button:focus {
+    outline: 3px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Footer Register */
+.login-card .register {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #fca5a5;
+}
+
+.login-card .register a {
+    font-weight: 600;
+    color: #fff;
+}
