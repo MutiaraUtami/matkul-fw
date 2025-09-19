@@ -1,63 +1,61 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('home');
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// CRUD Product
+Route::prefix('product')->group(function () {
+    Route::get('/', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });
 
+// Auth routes (login, register, dll)
 require __DIR__.'/auth.php';
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Halaman utama
+Route::get('/', fn() => view('welcome'))->name('home');
 
-Route::get('/courses', function () {
-    return view('courses');
-})->name('courses');
+// Dashboard (hanya admin)
+Route::get('/dashboard', fn() => view('dashboard'))
+    ->middleware(['auth', 'verified', 'role:admin'])
+    ->name('dashboard');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
-// Route dengan parameter untuk Courses
-Route::get('/courses/{name}', function ($name) {
-    return "Kamu sedang melihat course: " . ucfirst($name);
-})->name('courses.show');
+// Halaman rahasia (hanya admin)
+Route::get('/product', [ProductController::class, 'index']);
 
 
-// Grouping Route untuk kategori courses
+
+// Static pages
+Route::view('/about', 'about')->name('about');
+Route::view('/courses', 'courses')->name('courses');
+Route::view('/contact', 'contact')->name('contact');
+
+// Route dengan parameter
+Route::get('/courses/{name}', fn($name) => "Kamu sedang melihat course: " . ucfirst($name))
+    ->name('courses.show');
+
+// Grouping untuk kategori courses
 Route::prefix('courses')->group(function () {
-    Route::get('framework-web', function () {
-        return "Ini adalah halaman Framework Web";
-    })->name('framework-web');
+    Route::get('framework-web', fn() => "Ini adalah halaman Framework Web")
+        ->name('framework-web');
 
-    Route::get('framework-web/{lesson}', function ($lesson) {
-        return "Framework Web - Pelajaran ke-{$lesson}";
-    })->name('framework-web.lesson');
+    Route::get('framework-web/{lesson}', fn($lesson) => "Framework Web - Pelajaran ke-{$lesson}")
+        ->name('framework-web.lesson');
 
-    Route::get('mobile-programming', function () {
-        return "Ini adalah halaman Mobile Programming";
-    })->name('mobile-programming');
+    Route::get('mobile-programming', fn() => "Ini adalah halaman Mobile Programming")
+        ->name('mobile-programming');
 
-    Route::get('mobile-programming/{lesson}', function ($lesson) {
-        return "Mobile Programming - Pelajaran ke-{$lesson}";
-    })->name('mobile-programming.lesson');
+    Route::get('mobile-programming/{lesson}', fn($lesson) => "Mobile Programming - Pelajaran ke-{$lesson}")
+        ->name('mobile-programming.lesson');
 });
