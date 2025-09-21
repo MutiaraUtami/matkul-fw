@@ -9,9 +9,16 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($angka)
     {
-        return view('manage.users.edit_users');
+        // angka bebas yang akan ditambahkan
+        $angkaTambahan = 5;
+
+        // jumlahkan
+        $hasil = $angka + $angkaTambahan;
+
+        // kirim ke view
+        return view('manage.tampil_angka', ['hasil' => $hasil]);
     }
 
     /**
