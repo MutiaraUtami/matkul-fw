@@ -7,5 +7,9 @@
 </head>
 <body>
     <p>Hasil penjumlahan: {{ $hasil }}</p>
+
+    <p class="text-gray-700">
+            Role Anda adalah <span class="font-semibold text-blue-600">{{ Auth::user()->role }}</span>.
+    </p>
 </body>
 </html>
