@@ -28,13 +28,10 @@ Route::get('/', fn() => view('welcome'))->name('home');
 
 // Dashboard (hanya admin)
 Route::get('/dashboard', fn() => view('dashboard'))
-    ->middleware(['auth', 'verified', 'role:admin'])
+    ->middleware('auth')
     ->name('dashboard');
 
-// Halaman rahasia (hanya admin)
-Route::get('/product', [ProductController::class, 'index']);
-
-
+// ⚠️ jangan bikin route `/product` lagi (sudah ada di atas)
 
 // Static pages
 Route::view('/about', 'about')->name('about');
