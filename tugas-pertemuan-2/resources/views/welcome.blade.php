@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <div class="p-6 bg-white rounded-lg shadow-md">
-        <h1 class="text-xl font-bold mb-4">Selamat Datang, {{ Auth::user()->name }} 👋</h1>
+<div class="p-6 bg-white rounded-lg shadow-md">
+    @auth
+        <h1 class="text-xl font-bold mb-4">
+            Selamat Datang, {{ Auth::user()->name }} 👋
+        </h1>
         <p class="text-gray-700">
             Role Anda adalah <span class="font-semibold text-blue-600">{{ Auth::user()->role }}</span>.
         </p>
-    </div>
+    @endauth
+
+    @guest
+        <h1 class="text-xl font-bold mb-4">Selamat Datang 👋</h1>
+        <p class="text-gray-700">Silakan login untuk melihat detail akun Anda.</p>
+    @endguest
+</div>
+
     
     <p>Pilih halaman:</p>
     <ul>

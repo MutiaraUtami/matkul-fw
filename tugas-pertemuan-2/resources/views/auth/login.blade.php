@@ -2,7 +2,6 @@
     <form method="POST" action="{{ route('login') }}" 
           class="max-w-md w-full bg-blue-600 shadow-lg rounded-xl px-8 py-6">
         @csrf
-        
 
         <!-- Sambutan -->
         <div class="text-center mb-6">
