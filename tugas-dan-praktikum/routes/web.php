@@ -44,6 +44,10 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/utamas', function () {
+    return view('navbars.utamas');
+});
+
 Route::get('/courses', function () {
     return view('courses');
 })->name('courses');

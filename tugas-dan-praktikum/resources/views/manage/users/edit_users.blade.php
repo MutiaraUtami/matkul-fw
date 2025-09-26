@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Users</title>
+    <title>Document</title>
 </head>
 <body>
-    <p>Hasil penjumlahan: {{ $hasil }}</p>
+    <p>Ini edit users</p>
 </body>
 </html>

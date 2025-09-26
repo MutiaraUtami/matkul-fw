@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="p-6 bg-white rounded-lg shadow-md">
+    @include('navbars.navbar')
     @auth
         <h1 class="text-xl font-bold mb-4">
             Selamat Datang, {{ Auth::user()->name }} 👋

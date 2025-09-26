@@ -82,3 +82,18 @@ a:hover {
     background: #be123c;
 }
 
+nav {
+    background: #0b0f33;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(0, 45, 82);
+}
