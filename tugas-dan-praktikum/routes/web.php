@@ -35,8 +35,9 @@ Route::get('/produk', [ProductController::class, 'index']);
     
 use App\Http\Controllers\ProductController;
 
-Route::get('/product/{angka}', [ProductController::class, 'index'])
-    ->middleware(['auth', 'RoleCheck:admin,owner']);
+
+Route::get('/produk/{angka}', [ProductController::class, 'cekAngka']);
+
 
 require __DIR__.'/auth.php';
 

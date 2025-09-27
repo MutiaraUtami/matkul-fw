@@ -21,6 +21,20 @@ class ProductController extends Controller
         return view('manage.tampil_angka', ['hasil' => $hasil]);
     }
 
+
+    public function cekAngka($angka)
+    {
+        if ($angka % 2 == 0) {
+            $pesan = "Nilai $angka adalah genap.";
+            $alertType = "success";
+        } else {
+            $pesan = "Nilai $angka adalah ganjil.";
+            $alertType = "warning";
+        }
+    
+        return view('produk', compact('pesan', 'alertType'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
