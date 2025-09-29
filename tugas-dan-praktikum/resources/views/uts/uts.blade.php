@@ -1,19 +1,12 @@
 @extends('uts.app')
 
 @section('content')
-    <h2 class="text-2xl font-semibold mb-6">Menu UTS</h2>
-
-    <div class="flex gap-6">
-        <!-- Tombol ke Pemrograman Web -->
-        <a href="{{ url('/uts/web') }}" 
-           class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-           Menu UTS Pemrograman Web
-        </a>
-
-        <!-- Tombol ke Database -->
-        <a href="{{ url('/uts/database') }}" 
-           class="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
-           Menu UTS Database
-        </a>
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-2">Selamat Datang 👋</h3>
+        <p class="text-gray-700 mb-4">
+            Selamat datang di Menu UTS Praktikum Framework Pemrograman Web.
+            Silakan pilih menu <span class="font-semibold">Web</span> atau <span class="font-semibold">Database</span> 
+            melalui navigasi di atas untuk mulai mengerjakan.
+        </p>
     </div>
 @endsection

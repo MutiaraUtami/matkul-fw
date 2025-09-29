@@ -9,8 +9,10 @@
 <body class="bg-gray-100 min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-blue-600 text-white p-4">
+    <header class="bg-blue-600 text-white p-4 flex space-x-6">
         <h1 class="text-xl font-bold">UTS Praktikum</h1>
+        <a href="{{ url('/uts/web') }}" class="hover:bg-blue-700 px-3 py-1 rounded">Web</a>
+        <a href="{{ url('/uts/database') }}" class="hover:bg-blue-700 px-3 py-1 rounded">Database</a>
     </header>
 
     <!-- Body -->
@@ -18,7 +20,7 @@
         @yield('content')
     </main>
 
-    <!-- Footer (sticky di bawah) -->
+    <!-- Footer-->
     <footer class="bg-gray-800 text-white text-center p-3">
         <p>&copy; 2025 UTS Framework Pemrograman Web</p>
     </footer>
