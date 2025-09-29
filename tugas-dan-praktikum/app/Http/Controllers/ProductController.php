@@ -25,10 +25,10 @@ class ProductController extends Controller
     public function cekAngka($angka)
     {
         if ($angka % 2 == 0) {
-            $pesan = "Nilai $angka adalah genap.";
+            $pesan = "Nilai ini adalah genap.";
             $alertType = "success";
         } else {
-            $pesan = "Nilai $angka adalah ganjil.";
+            $pesan = "Nilai ini adalah ganjil.";
             $alertType = "warning";
         }
     

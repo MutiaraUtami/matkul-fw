@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/uts', function () {
+    return view('uts');
+})->name('uts');
 
 Route::get('/dashboard', function () {
     return view('welcome');
@@ -45,9 +49,12 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+
 Route::get('/utamas', function () {
     return view('navbars.utamas');
 });
+
+
 
 Route::get('/courses', function () {
     return view('courses');
