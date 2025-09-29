@@ -17,9 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/uts', function () {
-    return view('uts');
-})->name('uts');
+
+use App\Http\Controllers\UtsController;
+
+Route::get('/uts', [UtsController::class, 'index']);
+Route::get('/uts/web', [UtsController::class, 'web']);
+Route::get('/uts/database', [UtsController::class, 'database']);
 
 Route::get('/dashboard', function () {
     return view('welcome');
